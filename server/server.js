@@ -9,6 +9,7 @@ import orderRouter from "./Routes/orderRoutes.js";
 import midtransClient from "midtrans-client";
 // import bodyParser from "body-parser";
 import cors from "cors";
+
 import { v4 as uuidv4 } from "uuid";
 
 dotenv.config();
@@ -31,14 +32,23 @@ let snap = new midtransClient.Snap({
   serverKey: process.env.MIDTRANS_SERVER_KEY,
 });
 
-// app.use(bodyParser.urlencoded);
-// app.use(bodyParser.json);
+// generete id
+// let counter = 1;
+// let prevRand = 1;
+// const rand = (max = 10) => {
+//   time = new Date().getTime();
+//   randValue = (time / counter / (prevRand + 1)) % max;
+//   counter++;
+//   prevRand = randValue;
+//   return randValue;
+// };
+
 app.use(cors());
 let oidd = uuidv4();
 app.post("/api/midtrans", (req, res) => {
   let parameter = {
     transaction_details: {
-      order_id: oidd,
+      order_id: uuidv4(),
       gross_amount: 10000,
     },
     credit_card: {

@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <div>
       {/* Top Header */}
-      <div className="Announcement ">
+      {/* <div className="Announcement ">
         <div className="container">
           <div className="row">
             <div className="col-md-6 d-flex align-items-center display-none">
@@ -48,7 +48,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Header */}
       <div className="header">
         <div className="container">
@@ -148,6 +148,11 @@ const Header = () => {
                     placeholder="Search"
                     onChange={(e) => setKeyword(e.target.value)}
                   />
+                  {/* <i
+                    type="submit"
+                    className="search-button"
+                    class="ri-search-line"
+                  ></i> */}
                   <button type="submit" className="search-button">
                     search
                   </button>
@@ -163,7 +168,7 @@ const Header = () => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Hi, {userInfo.name}
+                      Halo {userInfo.name}
                     </button>
                     <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/profile">
@@ -182,7 +187,9 @@ const Header = () => {
                 ) : (
                   <>
                     <Link to="/register">Register</Link>
-                    <Link to="/login">Login</Link>
+                    <button className="login__btn">
+                      <Link to="/login">Login</Link>
+                    </button>
                   </>
                 )}
 

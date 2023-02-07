@@ -1,5 +1,6 @@
-.hero__section {
+.hero__section1 {
   background: #d6e5fb;
+  margin-top: -1px;
 }
 
 .hero__content h2 {
@@ -15,7 +16,7 @@
   padding-top: 1;
 }
 
-.hero__section p:nth-child(1) {
+.hero__section1 p:nth-child(1) {
   font-weight: 500;
 }
 .buy__btn {

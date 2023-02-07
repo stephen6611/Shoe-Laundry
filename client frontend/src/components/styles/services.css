@@ -1,3 +1,6 @@
+.services {
+  margin-top: -20px;
+}
 .service__item {
   padding: 20px;
   display: flex;

@@ -21,11 +21,11 @@ const ShopSection = (props) => {
   }, [dispatch, keyword, pagenumber]);
   return (
     <>
-      <section className="trending__products">
+      <section className="trending__products" id="services">
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2 className="section__title">Layanan Kami</h2>
+              <h2 className="section__title">Layanan Laundry Kami</h2>
             </Col>
           </Row>
         </Container>

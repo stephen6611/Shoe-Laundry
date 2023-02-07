@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -15,10 +17,13 @@ a {
 a:hover {
   color: black;
 }
+
+h1 {
+  font-family: "RocknRoll One", sans-serif !important;
+}
 i,
 a,
 p,
-h1,
 h2,
 h3,
 h4,
@@ -100,6 +105,27 @@ textarea:focus {
   background-color: white;
   border-radius: 2px;
   margin: 0 15px;
+}
+
+.login__btn {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  color: white;
+  background: #df2020;
+  border-radius: 5px;
+  font-family: var(--font-name);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.login__btn a {
+  color: white;
+}
+.login__btn:hover {
+  background: #212245;
 }
 
 .dropdown-menu {
