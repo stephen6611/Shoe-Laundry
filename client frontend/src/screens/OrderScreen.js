@@ -10,22 +10,6 @@ import moment from "moment";
 import axios from "axios";
 import { ORDER_PAY_RESET } from "../Redux/Constants/OrderConstants";
 import FormatPrice from "../Helpers/FormatPrice";
-// import { v4 as uuidv4 } from "uuid";
-
-// let oid = uuidv4();
-// let tokenID = "";
-// async function checkID() {
-//   await axios
-//     .post("http://localhost:5000/api/midtrans", {
-//       orderID: oid,
-//     })
-//     .then((res) => {
-//       tokenID = res.data;
-//     });
-// }
-// async function pay() {
-//   await window.snap.pay("tokenID");
-// }
 
 const OrderScreen = ({ match }) => {
   window.scrollTo(0, 0);
@@ -75,6 +59,30 @@ const OrderScreen = ({ match }) => {
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(orderId, paymentResult));
   };
+
+  // Midtrans
+  let tokenID = "";
+  async function checkID() {
+    await axios
+      .post("http://localhost:5000/api/midtrans", {
+        orderId: orderId,
+        amount: order.totalPrice,
+        name: order.user.name,
+        email: order.user.email,
+      })
+      .then((res) => {
+        tokenID = res.data;
+      });
+  }
+
+  async function pay() {
+    await window.snap.pay(tokenID);
+  }
+
+  function callBoth() {
+    checkID();
+    pay();
+  }
 
   return (
     <>
@@ -243,18 +251,30 @@ const OrderScreen = ({ match }) => {
                     </tr>
                   </tbody>
                 </table>
-
+                {/* <button
+                  onClick={() => {
+                    checkID();
+                    pay();
+                    // tokenID()
+                  }}
+                >
+                  checkout
+                </button> */}
+                <button onClick={callBoth}>Checkout</button>
+                {/* <button onClick={pay}>
+                  Pay! <b>token {tokenID}</b>
+                </button> */}
                 {!order.isPaid && (
                   <div className="col-12">
                     {loadingPay && <Loading />}
-                    {!sdkReady ? (
+                    {/* {!sdkReady ? (
                       <Loading />
                     ) : (
                       <PayPalButton
                         amount={order.totalPrice}
                         onSuccess={successPaymentHandler}
                       />
-                    )}
+                    )} */}
                   </div>
                 )}
               </div>

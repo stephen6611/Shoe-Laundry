@@ -3,25 +3,8 @@ import Helmet from "../homeComponents/Helmet";
 import heroImg from "../../data/img/hero-img2.png";
 import { Col, Container, Row } from "reactstrap";
 import { motion } from "framer-motion/dist/framer-motion";
-import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+
 import { Link } from "react-scroll";
-
-let oid = uuidv4();
-let tokenID = "";
-async function checkID() {
-  await axios
-    .post("http://localhost:5000/api/midtrans", {
-      orderID: oid,
-    })
-    .then((res) => {
-      tokenID = res.data;
-    });
-}
-
-async function pay() {
-  await window.snap.pay(tokenID);
-}
 
 const About = () => {
   return (
@@ -59,11 +42,6 @@ const About = () => {
                     Laundry Sekarang
                   </Link>
                 </motion.button>
-
-                {/* <button onClick={checkID}>checkout</button>
-                <button onClick={pay}>
-                  Pay! <b>token {tokenID}</b>
-                </button> */}
               </div>
             </Col>
 

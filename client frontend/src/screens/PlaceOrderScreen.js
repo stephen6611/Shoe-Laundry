@@ -1,3 +1,4 @@
+// import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import { createOrder } from "../Redux/Actions/OrderActions";
 import { ORDER_CREATE_RESET } from "../Redux/Constants/OrderConstants";
 import Header from "./../components/Header";
 import Message from "./../components/LoadingError/Error";
+// import { v4 as uuidv4 } from "uuid";
 
 const PlaceOrderScreen = ({ history }) => {
   window.scrollTo(0, 0);
@@ -184,6 +186,7 @@ const PlaceOrderScreen = ({ history }) => {
                 </tr>
               </tbody>
             </table>
+
             {cart.cartItems.length === 0 ? null : (
               <button type="submit" onClick={placeOrderHandler}>
                 PLACE ORDER

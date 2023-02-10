@@ -7,9 +7,8 @@ import { errorHandler, notFound } from "./Middleware/Errors.js";
 import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 import midtransClient from "midtrans-client";
-// import bodyParser from "body-parser";
+import axios from "axios";
 import cors from "cors";
-
 import { v4 as uuidv4 } from "uuid";
 
 dotenv.config();
@@ -18,6 +17,9 @@ const app = express();
 app.use(express.json());
 
 // API
+// app.post("/api/finish", (req, res) => {
+//   console.log(req);
+// });
 app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);
 app.use("/api/users", userRouter);
@@ -27,43 +29,29 @@ app.get("/api/config/paypal", (req, res) => {
 });
 
 //midtrans
+app.use(cors());
+
 let snap = new midtransClient.Snap({
   isProduction: false,
   serverKey: process.env.MIDTRANS_SERVER_KEY,
 });
-
-// generete id
-// let counter = 1;
-// let prevRand = 1;
-// const rand = (max = 10) => {
-//   time = new Date().getTime();
-//   randValue = (time / counter / (prevRand + 1)) % max;
-//   counter++;
-//   prevRand = randValue;
-//   return randValue;
-// };
-
-app.use(cors());
-let oidd = uuidv4();
 app.post("/api/midtrans", (req, res) => {
+  console.log(req.body);
   let parameter = {
     transaction_details: {
-      order_id: uuidv4(),
-      gross_amount: 10000,
+      order_id: req.body.orderId,
+      gross_amount: req.body.amount,
     },
     credit_card: {
       secure: true,
     },
     customer_details: {
-      first_name: "budi",
-      last_name: "pratama",
-      email: "budi.pra@example.com",
+      first_name: req.body.name,
+      email: "testmidtrans@mail.com",
       phone: "08111222333",
     },
   };
-
   snap.createTransaction(parameter).then((transaction) => {
-    // transaction token
     let transactionToken = transaction.token;
     console.log("transactionToken:", transactionToken);
     res.send(transactionToken);
