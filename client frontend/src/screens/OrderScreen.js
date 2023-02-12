@@ -32,6 +32,8 @@ const OrderScreen = ({ match }) => {
     );
   }
 
+  //paypal payment
+
   useEffect(() => {
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get("/api/config/paypal");
@@ -66,22 +68,38 @@ const OrderScreen = ({ match }) => {
     await axios
       .post("http://localhost:5000/api/midtrans", {
         orderId: orderId,
+        productPrice: order.orderItems[0].price,
         amount: order.totalPrice,
+        tax: order.taxPrice,
         name: order.user.name,
         email: order.user.email,
+        productName: order.orderItems[0].name,
+        qty: order.orderItems[0].qty,
       })
       .then((res) => {
         tokenID = res.data;
       });
   }
 
-  async function pay() {
-    await window.snap.pay(tokenID);
-  }
+  // async function pay() {
+  //   await window.snap.pay(tokenID);
+  // }
 
-  function callBoth() {
-    checkID();
-    pay();
+  // async function pay() {
+  //   await window.snap.pay(tokenID, {
+  //     onSuccess: function (result) {
+  //       /* You may add your own implementation here */
+  //       alert("payment success!");
+  //       console.log(result);
+  //     },
+  //   });
+  // }
+
+  //paid
+  async function pay() {
+    await window.snap.pay(tokenID, {
+      onSuccess: successPaymentHandler,
+    });
   }
 
   return (
@@ -255,26 +273,29 @@ const OrderScreen = ({ match }) => {
                   onClick={() => {
                     checkID();
                     pay();
-                    // tokenID()
                   }}
                 >
-                  checkout
+                  Checkout
                 </button> */}
-                <button onClick={callBoth}>Checkout</button>
+                {/* <button onClick={callBoth}>Checkout</button> */}
                 {/* <button onClick={pay}>
                   Pay! <b>token {tokenID}</b>
                 </button> */}
                 {!order.isPaid && (
                   <div className="col-12">
                     {loadingPay && <Loading />}
-                    {/* {!sdkReady ? (
+                    {!sdkReady ? (
                       <Loading />
                     ) : (
-                      <PayPalButton
-                        amount={order.totalPrice}
-                        onSuccess={successPaymentHandler}
-                      />
-                    )} */}
+                      <button
+                        onClick={() => {
+                          checkID();
+                          pay();
+                        }}
+                      >
+                        Checkout
+                      </button>
+                    )}
                   </div>
                 )}
               </div>

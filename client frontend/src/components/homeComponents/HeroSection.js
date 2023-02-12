@@ -46,7 +46,7 @@ const HeroSection = () => {
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
                       <i class="ri-time-line"></i>
-                    </span>{" "}
+                    </span>
                     Buka 08:00-21:00
                   </p>
 
