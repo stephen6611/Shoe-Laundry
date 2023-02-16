@@ -32,33 +32,33 @@ const ShippingScreen = ({ history }) => {
           <h6>ALAMAT PICK-UP & DELIVERY</h6>
           <input
             type="text"
-            placeholder="Enter address"
+            placeholder="Masukan Alamat"
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
           />
           <input
             type="text"
-            placeholder="Enter city"
+            placeholder="Waktu Pickup"
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
           />
           <input
             type="text"
-            placeholder="Enter postal code"
+            placeholder="Masukan Postal Kode"
             value={postalCode}
             required
             onChange={(e) => setPostalCode(e.target.value)}
           />
           <input
             type="text"
-            placeholder="Enter country"
+            placeholder="Keterangan (merk, size, warna, dll)"
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}
           />
-          <button type="submit">Continue</button>
+          <button type="submit">Lanjutkan</button>
         </form>
       </div>
     </>

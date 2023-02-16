@@ -50,12 +50,12 @@ const AddProductMain = () => {
         <form onSubmit={submitHandler}>
           <div className="content-header">
             <Link to="/products" className="btn btn-danger text-white">
-              Go to products
+              Pergi ke Layanan
             </Link>
-            <h2 className="content-title">Add product</h2>
+            <h2 className="content-title">Tambah Layanan</h2>
             <div>
               <button type="submit" className="btn btn-primary">
-                Publish now
+                Simpan
               </button>
             </div>
           </div>
@@ -68,7 +68,7 @@ const AddProductMain = () => {
                   {loading && <Loading />}
                   <div className="mb-4">
                     <label htmlFor="product_title" className="form-label">
-                      Product title
+                      Judul Layanan/Produk
                     </label>
                     <input
                       type="text"
@@ -82,7 +82,7 @@ const AddProductMain = () => {
                   </div>
                   <div className="mb-4">
                     <label htmlFor="product_price" className="form-label">
-                      Price
+                      Harga
                     </label>
                     <input
                       type="number"
@@ -96,7 +96,7 @@ const AddProductMain = () => {
                   </div>
                   <div className="mb-4">
                     <label htmlFor="product_price" className="form-label">
-                      Count In Stock
+                      Stok
                     </label>
                     <input
                       type="number"
@@ -109,9 +109,9 @@ const AddProductMain = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="form-label">Description</label>
+                    <label className="form-label">Deskripsi</label>
                     <textarea
-                      placeholder="Type here"
+                      placeholder="Ketik disini"
                       className="form-control"
                       rows="7"
                       required
@@ -120,11 +120,11 @@ const AddProductMain = () => {
                     ></textarea>
                   </div>
                   <div className="mb-4">
-                    <label className="form-label">Images</label>
+                    <label className="form-label">Gambar</label>
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Enter Image URL"
+                      placeholder="Masukan Link Gambar"
                       value={image}
                       required
                       onChange={(e) => setImage(e.target.value)}

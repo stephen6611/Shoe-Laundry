@@ -35,11 +35,11 @@ const HeroSection = () => {
                     <i class="ri-arrow-right-s-line"></i>
                   </button>
 
-                  <button className="all__foods-btn">
+                  {/* <button className="all__foods-btn">
                     <Link to="about" classname="about__btn">
                       <a href="btn_2">Tentang Kami</a>
                     </Link>
-                  </button>
+                  </button> */}
                 </div>
 
                 <div className=" heroes__service  d-flex align-items-center gap-5 mt-5 ">

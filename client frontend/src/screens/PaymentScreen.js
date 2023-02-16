@@ -13,7 +13,7 @@ const PaymentScreen = ({ history }) => {
     history.push("/shipping");
   }
 
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");
+  const [paymentMethod, setPaymentMethod] = useState("Bank & E-Wallet");
 
   const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ const PaymentScreen = ({ history }) => {
           className="Login2 col-md-8 col-lg-4 col-11"
           onSubmit={submitHandler}
         >
-          <h6>SELECT PAYMENT METHOD</h6>
+          <h6>PILIH METODE PEMBAYARAN</h6>
           <div className="payment-container">
             <div className="radio-container">
               <input
@@ -39,11 +39,13 @@ const PaymentScreen = ({ history }) => {
                 value={paymentMethod}
                 onChange={(e) => setPaymentMethod(e.target.value)}
               />
-              <label className="form-check-label">PayPal or Credit Card</label>
+              <label className="form-check-label">
+                Bank Transfer & E-Money
+              </label>
             </div>
           </div>
 
-          <button type="submit">Continue</button>
+          <button type="submit">Lanjutkan</button>
         </form>
       </div>
     </>

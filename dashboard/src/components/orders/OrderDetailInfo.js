@@ -21,12 +21,12 @@ const OrderDetailInfo = (props) => {
       <div className="col-md-6 col-lg-4">
         <article className="icontext align-items-start">
           <span className="icon icon-sm rounded-circle alert-success">
-            <i className="text-success fas fa-truck-moving"></i>
+            <i className="text-success fas fa-info"></i>
           </span>
           <div className="text">
-            <h6 className="mb-1">Order info</h6>
+            <h6 className="mb-1">Info Pemesanan</h6>
             <p className="mb-1">
-              Shipping: {order.shippingAddress.country} <br /> Pay method:{" "}
+              Keterangan: {order.shippingAddress.country} <br /> Pay method:{" "}
               {order.paymentMethod}
             </p>
           </div>
@@ -35,12 +35,12 @@ const OrderDetailInfo = (props) => {
       <div className="col-md-6 col-lg-4">
         <article className="icontext align-items-start">
           <span className="icon icon-sm rounded-circle alert-success">
-            <i className="text-success fas fa-map-marker-alt"></i>
+            <i className="text-success fas fa-truck-moving"></i>
           </span>
           <div className="text">
-            <h6 className="mb-1">Deliver to</h6>
+            <h6 className="mb-1">Info Pengiriman</h6>
             <p className="mb-1">
-              Address: {order.shippingAddress.city}
+              Alamat: {order.shippingAddress.city}
               <br />
               {order.shippingAddress.address}
               <br /> {order.shippingAddress.postalCode}

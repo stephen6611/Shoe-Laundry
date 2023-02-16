@@ -29,7 +29,7 @@ const orderSchema = mongoose.Schema(
     paymentMethod: {
       type: String,
       required: true,
-      default: "Paypal",
+      default: "Bank_E-Wallet",
     },
     paymentResult: {
       id: { type: String },
@@ -66,6 +66,22 @@ const orderSchema = mongoose.Schema(
       default: false,
     },
     deliveredAt: {
+      type: Date,
+    },
+    isPickup: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    pickupAt: {
+      type: Date,
+    },
+    isLaundry: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    laundryAt: {
       type: Date,
     },
   },

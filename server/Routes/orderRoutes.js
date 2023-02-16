@@ -129,4 +129,44 @@ orderRouter.put(
   })
 );
 
+// ORDER IS PICKUP
+orderRouter.put(
+  "/:id/pickup",
+  protect,
+  asyncHandler(async (req, res) => {
+    const order = await Order.findById(req.params.id);
+
+    if (order) {
+      order.isPickup = true;
+      order.pickupAt = Date.now();
+
+      const updatedOrder = await order.save();
+      res.json(updatedOrder);
+    } else {
+      res.status(404);
+      throw new Error("Order Not Found");
+    }
+  })
+);
+
+// ORDER IS Laundry
+orderRouter.put(
+  "/:id/laundry",
+  protect,
+  asyncHandler(async (req, res) => {
+    const order = await Order.findById(req.params.id);
+
+    if (order) {
+      order.isLaundry = true;
+      order.laundryAt = Date.now();
+
+      const updatedOrder = await order.save();
+      res.json(updatedOrder);
+    } else {
+      res.status(404);
+      throw new Error("Order Not Found");
+    }
+  })
+);
+
 export default orderRouter;

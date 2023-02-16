@@ -138,17 +138,17 @@ const OrderScreen = ({ match }) => {
                 <div className="row">
                   <div className="col-md-4 center">
                     <div className="alert-success order-box">
-                      <i className="fas fa-truck-moving"></i>
+                      <i class="ri-information-fill"></i>
                     </div>
                   </div>
                   <div className="col-md-8 center">
                     <h5>
-                      <strong>Order info</strong>
+                      <strong>Info Pemesanan</strong>
                     </h5>
-                    <p>Shipping: {order.shippingAddress.country}</p>
+                    <p>Keterangan: {order.shippingAddress.country}</p>
                     <p>Pay method: {order.paymentMethod}</p>
                     {order.isPaid ? (
-                      <div className="bg-info p-2 col-12">
+                      <div className="bg-info  p-2 col-12">
                         <p className="text-white text-center text-sm-start">
                           Paid on {moment(order.paidAt).calendar()}
                         </p>
@@ -160,6 +160,20 @@ const OrderScreen = ({ match }) => {
                         </p>
                       </div>
                     )}
+                    {order.isLaundry ? (
+                      <div className="bg-info  p-2 col-12">
+                        <p className="text-white text-center text-sm-start">
+                          Status Laundry : Selesai
+                          {/* <p>{moment(order.paidAt).calendar()}</p> */}
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="bg-danger p-2 col-12">
+                        <p className="text-white text-center text-sm-start">
+                          Status Laundry : -
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -168,22 +182,41 @@ const OrderScreen = ({ match }) => {
                 <div className="row">
                   <div className="col-md-4 center">
                     <div className="alert-success order-box">
-                      <i className="fas fa-map-marker-alt"></i>
+                      <i class="ri-truck-fill"></i>
                     </div>
                   </div>
                   <div className="col-md-8 center">
                     <h5>
-                      <strong>Deliver to</strong>
+                      <strong>Info Pengiriman</strong>
                     </h5>
                     <p>
-                      Address: {order.shippingAddress.city},{" "}
+                      <b>Alamat: </b>
                       {order.shippingAddress.address},{" "}
                       {order.shippingAddress.postalCode}
                     </p>
+                    <p>
+                      <b>Pick-up: </b>
+                      {order.shippingAddress.city}{" "}
+                    </p>
+                    {/* pickup */}
+                    {order.isPickup ? (
+                      <div className="bg-info p-2 col-12">
+                        <p className="text-white text-center text-sm-start">
+                          Pickup {moment(order.pickupAt).calendar()}
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="bg-danger p-2 col-12">
+                        <p className="text-white text-center text-sm-start">
+                          Not Pickup
+                        </p>
+                      </div>
+                    )}
+                    {/* delivered */}
                     {order.isDelivered ? (
                       <div className="bg-info p-2 col-12">
                         <p className="text-white text-center text-sm-start">
-                          Delivered on {moment(order.deliveredAt).calendar()}
+                          Delivered {moment(order.deliveredAt).calendar()}
                         </p>
                       </div>
                     ) : (
@@ -197,6 +230,13 @@ const OrderScreen = ({ match }) => {
                 </div>
               </div>
             </div>
+
+            {/* <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
+              <div className="row"></div>
+              <div className="col-md-4 center"></div>
+              <div className="alert-success order-box"></div>
+              i
+            </div> */}
 
             <div className="row order-products justify-content-between">
               <div className="col-lg-8">
@@ -217,7 +257,7 @@ const OrderScreen = ({ match }) => {
                           </Link>
                         </div>
                         <div className="mt-3 mt-md-0 col-md-2 col-6  d-flex align-items-center flex-column justify-content-center ">
-                          <h4>QUANTITY</h4>
+                          <h4>Jumlah per Pasang</h4>
                           <h6>{item.qty}</h6>
                         </div>
                         <div className="mt-3 mt-md-0 col-md-2 col-6 align-items-end  d-flex flex-column justify-content-center ">
@@ -293,7 +333,7 @@ const OrderScreen = ({ match }) => {
                           pay();
                         }}
                       >
-                        Checkout
+                        Bayar
                       </button>
                     )}
                   </div>

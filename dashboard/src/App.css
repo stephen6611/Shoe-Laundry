@@ -28,8 +28,19 @@ a.disabled {
   background-color: #4fa607 !important;
   border: 1px solid #4fa607 !important;
 }
+.btn-dark {
+  margin: 5px;
+}
+.btn-success {
+  margin: 5px;
+}
+
 .Header-green {
   background-color: #4fa607;
+}
+
+.col-lg-12 {
+  margin-top: 10px;
 }
 /* .screen-overlay {
   width: 0%;

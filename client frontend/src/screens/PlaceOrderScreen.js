@@ -83,14 +83,14 @@ const PlaceOrderScreen = ({ history }) => {
             <div className="row">
               <div className="col-md-4 center">
                 <div className="alert-success order-box">
-                  <i className="fas fa-truck-moving"></i>
+                  <i class="ri-information-fill"></i>
                 </div>
               </div>
               <div className="col-md-8 center">
                 <h5>
-                  <strong>Order info</strong>
+                  <strong>Info Pemesanan</strong>
                 </h5>
-                <p>Shipping: {cart.shippingAddress.country}</p>
+                <p>Keterangan: {cart.shippingAddress.country}</p>
                 <p>Pay method: {cart.paymentMethod}</p>
               </div>
             </div>
@@ -100,17 +100,20 @@ const PlaceOrderScreen = ({ history }) => {
             <div className="row">
               <div className="col-md-4 center">
                 <div className="alert-success order-box">
-                  <i className="fas fa-map-marker-alt"></i>
+                  <i className="fas fa-truck-moving"></i>
                 </div>
               </div>
               <div className="col-md-8 center">
                 <h5>
-                  <strong>Deliver to</strong>
+                  <strong>Info Pengiriman</strong>
                 </h5>
                 <p>
-                  Address: {cart.shippingAddress.city},{" "}
+                  <b>Alamat: </b>
                   {cart.shippingAddress.address},{" "}
                   {cart.shippingAddress.postalCode}
+                </p>
+                <p>
+                  <b>Pick-up:</b> {cart.shippingAddress.city}
                 </p>
               </div>
             </div>
@@ -134,7 +137,7 @@ const PlaceOrderScreen = ({ history }) => {
                       </Link>
                     </div>
                     <div className="mt-3 mt-md-0 col-md-2 col-6  d-flex align-items-center flex-column justify-content-center ">
-                      <h4>QUANTITY</h4>
+                      <h4>Jumlah per Pasang</h4>
                       <h6>{item.qty}</h6>
                     </div>
                     <div className="mt-3 mt-md-0 col-md-2 col-6 align-items-end  d-flex flex-column justify-content-center ">

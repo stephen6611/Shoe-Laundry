@@ -11,6 +11,8 @@ import {
 } from "./Reducers/ProductReducers";
 import {
   orderDeliveredReducer,
+  orderPickupReducer,
+  orderLaundryReducer,
   orderDetailsReducer,
   orderListReducer,
 } from "./Reducers/OrderReducres";
@@ -26,6 +28,8 @@ const reducer = combineReducers({
   orderList: orderListReducer,
   orderDetails: orderDetailsReducer,
   orderDeliver: orderDeliveredReducer,
+  orderPickup: orderPickupReducer,
+  orderLaundry: orderLaundryReducer,
 });
 
 // login

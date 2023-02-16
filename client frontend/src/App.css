@@ -65,6 +65,9 @@ textarea:focus {
 .navbar-brand img {
   width: 60%;
 }
+.navbar-brand {
+  cursor: pointer;
+}
 .input-group {
   height: 50px;
   width: 90%;
@@ -82,6 +85,7 @@ textarea:focus {
   text-transform: uppercase;
   font-size: 12px;
 }
+
 .Login-Register a {
   text-transform: uppercase;
   font-size: 15px;
@@ -398,6 +402,19 @@ textarea:focus {
   box-shadow: 0 1px 11px rgba(168, 168, 168, 0.27);
   text-align: center;
 }
+.bg-info {
+  margin-top: 20px;
+}
+.bg-danger {
+  margin-top: 20px;
+}
+
+/* .ri-time-line {
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
 .Login input {
   width: 100%;
   padding: 20px 20px;
@@ -415,7 +432,7 @@ textarea:focus {
   margin-top: 20px;
   padding: 20px 0;
   border: 0;
-  background-color: #1cb803;
+  background-color: #df2020;
   border-radius: 5px;
   text-transform: uppercase;
   color: white;

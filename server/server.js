@@ -32,7 +32,6 @@ app.get("/api/config/paypal", (req, res) => {
 });
 app.get("/");
 
-//midtrans
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -65,8 +64,8 @@ app.post("/api/midtrans", (req, res) => {
       quantity: req.body.qty,
       name: name,
       brand: "Midtrans",
-      category: "Toys",
-      merchant_name: "Midtrans",
+      category: "Laundry",
+      merchant_name: "Hars Shoe Cleaner",
     },
 
     customer_details: {

@@ -80,7 +80,7 @@ const SingleProduct = ({ history, match }) => {
 
                   <div className="product-count col-lg-7 ">
                     <div className="flex-box d-flex justify-content-between align-items-center">
-                      <h6>Price</h6>
+                      <h6>Harga</h6>
                       <span>
                         <FormatPrice rupiah={product.price} />
                       </span>
@@ -88,22 +88,22 @@ const SingleProduct = ({ history, match }) => {
                     <div className="flex-box d-flex justify-content-between align-items-center">
                       <h6>Status</h6>
                       {product.countInStock > 0 ? (
-                        <span>In Stock</span>
+                        <span>Siap Order</span>
                       ) : (
                         <span>unavailable</span>
                       )}
                     </div>
                     <div className="flex-box d-flex justify-content-between align-items-center">
-                      <h6>Reviews</h6>
+                      <h6>Ulasan</h6>
                       <Rating
                         value={product.rating}
-                        text={`${product.numReviews} reviews`}
+                        text={`${product.numReviews} ulasan`}
                       />
                     </div>
                     {product.countInStock > 0 ? (
                       <>
                         <div className="flex-box d-flex justify-content-between align-items-center">
-                          <h6>Quantity</h6>
+                          <h6>Jumlah per pasang</h6>
                           <select
                             value={qty}
                             onChange={(e) => setQty(e.target.value)}
@@ -121,7 +121,7 @@ const SingleProduct = ({ history, match }) => {
                           onClick={AddToCartHandle}
                           className="round-black-btn"
                         >
-                          TAMBAH KE CART
+                          PILIH LAYANAN
                         </button>
                       </>
                     ) : null}
@@ -133,7 +133,7 @@ const SingleProduct = ({ history, match }) => {
             {/* RATING */}
             <div className="row my-5">
               <div className="col-md-6">
-                <h6 className="mb-3">REVIEWS</h6>
+                <h6 className="mb-3">Ulasan</h6>
                 {product.reviews.length === 0 && (
                   <Message variant={"alert-info mt-3"}>No Reviews</Message>
                 )}
@@ -152,7 +152,7 @@ const SingleProduct = ({ history, match }) => {
                 ))}
               </div>
               <div className="col-md-6">
-                <h6>WRITE A CUSTOMER REVIEW</h6>
+                <h6>Berikan Ulasan Layanan Ini</h6>
                 <div className="my-4">
                   {loadingCreateReview && <Loading />}
                   {errorCreateReview && (
@@ -179,7 +179,7 @@ const SingleProduct = ({ history, match }) => {
                       </select>
                     </div>
                     <div className="my-4">
-                      <strong>Comment</strong>
+                      <strong>Tulis Ulasan</strong>
                       <textarea
                         row="3"
                         value={comment}

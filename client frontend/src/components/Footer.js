@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
           </Col>
 
-          <Col lg="3" md="3" className="mb-4">
+          <Col lg="3" md="3" className="mb-3">
             <div className="footer__quick-links">
               <h4 className="quick__links-title">Layanan Kami</h4>
               <ListGroup>

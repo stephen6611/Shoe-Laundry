@@ -50,7 +50,7 @@ const CartScreen = ({ match, location, history }) => {
         ) : (
           <>
             <div className=" alert alert-info text-center mt-3">
-              Total Cart Products
+              Total Jenis Layanan
               <Link className="text-success mx-2" to="/cart">
                 ({cartItems.length})
               </Link>
@@ -73,7 +73,7 @@ const CartScreen = ({ match, location, history }) => {
                   </Link>
                 </div>
                 <div className="cart-qty col-md-2 col-sm-5 mt-md-5 mt-3 mt-md-0 d-flex flex-column justify-content-center">
-                  <h6>QUANTITY</h6>
+                  <h6>Jumlah per Pasang</h6>
                   <select
                     value={item.qty}
                     onChange={(e) =>
@@ -105,7 +105,7 @@ const CartScreen = ({ match, location, history }) => {
             </div>
             <hr />
             <div className="cart-buttons d-flex align-items-center row">
-              <Link to="/" className="col-md-6 ">
+              <Link to="/shopsection" className="col-md-6 ">
                 <button>Tambah layanan lain</button>
               </Link>
               {total > 0 && (

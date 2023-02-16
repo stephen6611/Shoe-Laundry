@@ -11,7 +11,7 @@ const OrderMain = () => {
   return (
     <section className="content-main">
       <div className="content-header">
-        <h2 className="content-title">Orders</h2>
+        <h2 className="content-title">Pesanan</h2>
       </div>
 
       <div className="card mb-4 shadow-sm">
@@ -20,7 +20,7 @@ const OrderMain = () => {
             <div className="col-lg-4 col-md-6 me-auto">
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder="Cari..."
                 className="form-control p-2"
               />
             </div>
