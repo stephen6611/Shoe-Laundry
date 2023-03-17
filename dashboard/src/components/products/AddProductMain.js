@@ -50,7 +50,7 @@ const AddProductMain = () => {
         <form onSubmit={submitHandler}>
           <div className="content-header">
             <Link to="/products" className="btn btn-danger text-white">
-              Pergi ke Layanan
+              Pergi ke Services
             </Link>
             <h2 className="content-title">Tambah Layanan</h2>
             <div>
