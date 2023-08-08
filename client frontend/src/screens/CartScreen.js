@@ -36,7 +36,7 @@ const CartScreen = ({ match, location, history }) => {
       <div className="container">
         {cartItems.length === 0 ? (
           <div className=" alert alert-info text-center mt-3">
-            Anda belum memilih layanan laundry
+            Anda belum memilih produk atau layanan
             <Link
               className="btn btn-success mx-5 px-5 py-3"
               to="/"
@@ -44,13 +44,13 @@ const CartScreen = ({ match, location, history }) => {
                 fontSize: "12px",
               }}
             >
-              Pilih Layanan
+              Pilih Produk / Layanan
             </Link>
           </div>
         ) : (
           <>
             <div className=" alert alert-info text-center mt-3">
-              Total Jenis Layanan
+              Total Jenis Produk
               <Link className="text-success mx-2" to="/cart">
                 ({cartItems.length})
               </Link>
@@ -73,7 +73,7 @@ const CartScreen = ({ match, location, history }) => {
                   </Link>
                 </div>
                 <div className="cart-qty col-md-2 col-sm-5 mt-md-5 mt-3 mt-md-0 d-flex flex-column justify-content-center">
-                  <h6>Jumlah per Pasang</h6>
+                  <h6>Jumlah</h6>
                   <select
                     value={item.qty}
                     onChange={(e) =>
@@ -106,7 +106,7 @@ const CartScreen = ({ match, location, history }) => {
             <hr />
             <div className="cart-buttons d-flex align-items-center row">
               <Link to="/shopsection" className="col-md-6 ">
-                <button>Tambah layanan lain</button>
+                <button>Tambah Produk lain</button>
               </Link>
               {total > 0 && (
                 <div className="col-md-6 d-flex justify-content-md-end mt-3 mt-md-0">

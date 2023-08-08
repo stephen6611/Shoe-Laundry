@@ -29,7 +29,7 @@ const ShippingScreen = ({ history }) => {
           className="Login col-md-8 col-lg-4 col-11"
           onSubmit={submitHandler}
         >
-          <h6>ALAMAT PICK-UP & DELIVERY</h6>
+          <h6>ALAMAT</h6>
           <input
             type="text"
             placeholder="Masukan Alamat"
@@ -39,7 +39,7 @@ const ShippingScreen = ({ history }) => {
           />
           <input
             type="text"
-            placeholder="Waktu Pickup"
+            placeholder="Nama Kota"
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
@@ -53,7 +53,7 @@ const ShippingScreen = ({ history }) => {
           />
           <input
             type="text"
-            placeholder="Keterangan (merk, size, warna, dll)"
+            placeholder="Detail Alamat (patokan)"
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}

@@ -23,13 +23,15 @@ const About = () => {
           <Row>
             <Col lg="6" md="12">
               <div className="hero__content">
-                <h2>Tentang Hars Shoe Cleaner</h2>
+                <h2>CV. Grafika Teknik Mandiri</h2>
+                <b>Visi</b>
                 <p>
-                  Hars Shoe Cleaner merupakan usaha yang bergerak dibidang jasa
-                  laundry cuci sepatu berkualitas yang berasal dari Kota
-                  Jakarta.Kami hadir di Indonesia terutama di kota Jakarta pada
-                  2017. Kami sangat serius meningkatkan kualitas dan juga terus
-                  membagikan tips dalam merawat sepatu.
+                Mengembalikan dan menyempurnakan kembali kinerja mesin offset/cetak anda seperti semula.
+                </p>
+                <br></br>
+                <b>Misi</b>
+                <p>
+                Menyediakan solusi terbaik untuk kendala yang dialami mesin offset anda yang akan ditangani oleh teknisi kami yang sudah 20 tahun berpengalaman dalam mengangani perbaikan mesin offset/cetak.
                 </p>
                 <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">
                   <Link
@@ -39,7 +41,7 @@ const About = () => {
                     offset={-3}
                     duration={100}
                   >
-                    Laundry Sekarang
+                    Layanan Kami
                   </Link>
                 </motion.button>
               </div>

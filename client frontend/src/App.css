@@ -116,7 +116,7 @@ textarea:focus {
   outline: none;
   padding: 10px 20px;
   color: white;
-  background: #df2020;
+  background: #5371ff;
   border-radius: 5px;
   font-family: var(--font-name);
   font-size: 1rem;
@@ -432,7 +432,7 @@ textarea:focus {
   margin-top: 20px;
   padding: 20px 0;
   border: 0;
-  background-color: #df2020;
+  background-color: #5371ff;
   border-radius: 5px;
   text-transform: uppercase;
   color: white;

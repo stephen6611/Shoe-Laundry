@@ -25,7 +25,8 @@ const ShopSection = (props) => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2 className="section__title">Layanan Laundry Kami</h2>
+              <b className="section__title">Produk Tersedia</b>
+              <h6 className="">Berbagai suku cadang mesin offset yang tersedia</h6>
             </Col>
           </Row>
         </Container>
