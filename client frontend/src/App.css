@@ -116,7 +116,7 @@ textarea:focus {
   outline: none;
   padding: 10px 20px;
   color: white;
-  background: #df2020;
+  background: #5371ff;
   border-radius: 5px;
   font-family: var(--font-name);
   font-size: 1rem;
@@ -432,7 +432,7 @@ textarea:focus {
   margin-top: 20px;
   padding: 20px 0;
   border: 0;
-  background-color: #df2020;
+  background-color: #5371ff;
   border-radius: 5px;
   text-transform: uppercase;
   color: white;
@@ -699,4 +699,37 @@ textarea:focus {
 .page-item.active .page-link {
   background-color: black;
   border: 1px solid black;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgb(36, 35, 35);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+:root {
+  --card-bg: linear-gradient(
+    45deg,
+    rgba(15, 18, 61, 1) 33%,
+    rgba(15, 18, 61, 1) 52%,
+    rgba(11, 41, 69, 1) 84%
+  );
+  --counter-color: linear-gradient(
+    90deg,
+    #02bba6 30%,
+    rgba(29, 129, 176, 1) 55%,
+    rgba(35, 93, 173, 1) 75%
+  );
+  --body-bg: rgba(6, 11, 26, 1);
+  --newsletter-bg: linear-gradient(
+    90deg,
+    rgba(27, 9, 115, 1) 20%,
+    rgba(23, 9, 96, 1) 38%,
+    rgba(14, 9, 56, 1) 100%
+  );
+  --testimonial-bg: #1a0f4f;
+  --font-name: "Roboto", sans-serif;
+  --small-text-color: rgba(255, 255, 255, 0.774);
+  --icon-bg: #151e4f;
 }

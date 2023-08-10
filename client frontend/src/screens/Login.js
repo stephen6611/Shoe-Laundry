@@ -40,22 +40,22 @@ const Login = ({ location, history }) => {
         >
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Masukan E-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Masukan Kata Sandi"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Login</button>
+          <button type="submit">Masuk</button>
           <p>
             <Link
               to={redirect ? `/register?redirect=${redirect}` : "/register"}
             >
-              Create Account
+              Buat Akun
             </Link>
           </p>
         </form>

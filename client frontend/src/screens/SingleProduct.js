@@ -103,7 +103,7 @@ const SingleProduct = ({ history, match }) => {
                     {product.countInStock > 0 ? (
                       <>
                         <div className="flex-box d-flex justify-content-between align-items-center">
-                          <h6>Jumlah per pasang</h6>
+                          <h6>Jumlah</h6>
                           <select
                             value={qty}
                             onChange={(e) => setQty(e.target.value)}
@@ -121,7 +121,7 @@ const SingleProduct = ({ history, match }) => {
                           onClick={AddToCartHandle}
                           className="round-black-btn"
                         >
-                          PILIH LAYANAN
+                          PILIH Produk
                         </button>
                       </>
                     ) : null}

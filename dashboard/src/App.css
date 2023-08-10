@@ -36,7 +36,7 @@ a.disabled {
 }
 
 .Header-green {
-  background-color: #4fa607;
+  background-color: #5371ff;
 }
 
 .col-lg-12 {
@@ -326,7 +326,7 @@ body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
   font-size: 18px;
 }
 .menu-aside .active .icon {
-  color: #4fa607;
+  color: #5371ff;
 }
 .menu-aside .active {
   background-color: #ebf0fd;
@@ -540,7 +540,7 @@ a.itemside:hover .title {
 .card-user .card-header {
   position: relative;
   height: 100px;
-  background-color: #c3f19d !important;
+  background-color: #879afa !important;
   text-align: center;
 }
 .card-user .img-avatar {

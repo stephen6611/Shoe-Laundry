@@ -18,20 +18,18 @@ const HeroSection = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="heroes__content  ">
-                <h5 className="mb-3">Sepatu anda kotor ?</h5>
+                <h5 className="mb-3">Jasa Servis Mesin Offset</h5>
                 <h1 className="mb-4 heroes__title">
-                  <span>Kembalikan</span> kilau <br /> sepatu
-                  <span> anda!</span>
+                  <span>Grafika Teknik Mandiri</span>
                 </h1>
 
                 <h5>
-                  Hars Shoe Cleaner akan menjemput sepatu kotor kalian dan akan
-                  mengembalikan nya setelah sepatu kalian bersih!
+                CV. Grafika Teknik Mandiri merupakan perusahaan yang bergerak di bidang jasa service mesin cetak offset terbaik di Jakarta. CV. Grafika Teknik Mandiri Melayani Jasa Perbaikan Mesin cetak offset untuk Perkantoran, dan lain-lain.
                 </h5>
 
                 <div className="heroes__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                    <Link to="services">Laundry Sekarang </Link>
+                    <Link to="services">Jelajahi Lebih Lanjut </Link>
                     <i class="ri-arrow-right-s-line"></i>
                   </button>
 

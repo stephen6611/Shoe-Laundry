@@ -121,7 +121,7 @@ const Header = () => {
             <div className="row">
               <div className="col-md-3 col-6 d-flex align-items-center">
                 <Link1 className="navbar-brand" to="/">
-                  <img alt="logo" src="/images/logo1.png" />
+                  <img alt="logo" src="/images/logo1.png" /><b>Cv. Grafika</b>
                 </Link1>
               </div>
               <div className="col-md-8 col-12 d-flex align-items-center ms-auto">
@@ -134,6 +134,12 @@ const Header = () => {
                   </Link2>
                   <Link2 className="navbar-brand" to="about">
                     Tentang Kami
+                  </Link2>
+                  <Link2 className="navbar-brand" to="about">
+                    Galeri
+                  </Link2>
+                  <Link2 className="navbar-brand" to="about">
+                    FAQ
                   </Link2>
                 </div>
                 <div className="col-md-3 col-8 d-flex align-items-center ms-auto Login-Register">
@@ -164,9 +170,9 @@ const Header = () => {
                     </div>
                   ) : (
                     <>
-                      <Link1 to="/register">Register</Link1>
+                      <Link1 to="/register">Daftar</Link1>
                       <button className="login__btn">
-                        <Link1 to="/login">Login</Link1>
+                        <Link1 to="/login">Masuk</Link1>
                       </button>
                     </>
                   )}
